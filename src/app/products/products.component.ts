@@ -11,11 +11,12 @@ import { Router } from '@angular/router';
 })
 export class ProductsComponent {
   @Input() product!: Product;
+  @Input() llave!: string;
 
   constructor(private router: Router) {}
 
-  editarProducto(id: number) {
-    console.log('Editar producto con id:', id);
-    this.router.navigate(['/editar', id]);
+  editarProducto() {
+    // console.log('Editar producto con id:', this.llave);
+    this.router.navigate(['/editar', this.llave]);
   }
 }

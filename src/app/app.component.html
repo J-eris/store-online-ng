@@ -1,4 +1,17 @@
 <div class="container text-center">
   <h1 class="text-info">{{ title }}</h1>
+
+  <!-- Links login y salir -->
+  <div class="d-flex justify-content-center my-3">
+    @if(!isAutenticado()) {
+    <a class="btn btn-outline-primary mx-2" [routerLink]="['/login']"
+      >Iniciar Sesion</a
+    >
+    <!-- <a class="btn btn-primary mx-2" [routerLink]="['/register']">Registrarse</a> -->
+    } @else {
+    <a class="btn btn-outline-danger mx-2" (click)="logout()">Salir</a>
+    }
+  </div>
+
   <router-outlet />
 </div>

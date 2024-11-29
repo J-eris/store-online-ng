@@ -6,8 +6,8 @@
     </button>
   </div>
   <ul class="list-group w-50 mx-auto">
-    @for(productelement of products; track productelement.id ) {
-    <app-products [product]="productelement" />
+    @for(llave of obtenerLLaves(); track llave ) {
+    <app-products [product]="products[llave]" [llave]="llave" />
     }
   </ul>
 </div>
